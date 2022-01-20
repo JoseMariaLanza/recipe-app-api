@@ -11,8 +11,10 @@ class Commandtests(TestCase):
     def test_wait_for_db_ready(self):
         """Test waiting for db when db is available"""
         # Simulating the behavior of Django when the db is available
-        # The management command try and retrieve the db connection from Django
-        # Then it's going to check when we want to try retrieve an OperationError
+        # The management command try and retrieve
+        # the db connection from Django
+        # Then it's going to check when we want to try retrieve an
+        # OperationError
         # or not
         # Overriding the behavior of the ConnectionHandler
         with patch('django.db.utils.ConnectionHandler.__getitem__') as gi:

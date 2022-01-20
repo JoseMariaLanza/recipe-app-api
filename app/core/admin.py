@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from core import models
-# underscore is the convention for converting strings to human readeable text
+# underscore is the convention for converting strings
+# to human readeable text
 from django.utils.translation import gettext as _
 # The underscore it makes easier configure more than one language
 
@@ -12,7 +13,8 @@ class UserAdmin(BaseUserAdmin):
     fieldsets = (  # Define sections for fieldsets
         # param1=Title of the section, param2=fields
         (None, {'fields': ('email', 'password')}),
-        # The comma it's when you use one field this tell django that this it doesn't a string
+        # The comma it's when you use one field this tell django
+        # that this it doesn't a string
         (_('Personal Info'), {'fields': ('name',)}),
         (
             _('Permissions'),

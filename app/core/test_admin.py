@@ -28,7 +28,8 @@ class AdminSiteTests(TestCase):
         #  Test Client for HTTP GET to url
         res = self.client.get(url)
 
-        #  assertContains() check if res contains the attributes of a given object
+        #  assertContains() check if res contains
+        # the attributes of a given object
         self.assertContains(res, self.user.name)
         self.assertContains(res, self.user.email)
 
