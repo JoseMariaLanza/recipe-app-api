@@ -33,3 +33,6 @@ class UserAdmin(BaseUserAdmin):
 
 #  Register in Django Admin
 admin.site.register(models.User, UserAdmin)
+# It doesn't need to specify the class because
+# it's use the default one of the model
+admin.site.register(models.Tag)

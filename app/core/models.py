@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, \
     PermissionsMixin  # This classes extends User Model
 
+from django.conf import settings
+
 
 class UserManager(BaseUserManager):  # Use () to extends class
 
@@ -43,3 +45,15 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 # Se edita settings.py se agrega AUTH_USER_MODEL = 'core.User'
 # Finalmente se corren las migraciones
+
+
+class Tag(models.Model):
+    """Tag to be used for a recipe"""
+    name = models.CharField(max_length=255)
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+    )
+
+    def __str__(self):
+        return self.name
