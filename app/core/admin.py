@@ -37,3 +37,4 @@ admin.site.register(models.User, UserAdmin)
 # it's use the default one of the model
 admin.site.register(models.Tag)
 admin.site.register(models.Ingredient)
+admin.site.register(models.Recipe)
