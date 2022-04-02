@@ -2,7 +2,7 @@ name: 'Run tests via docker-compose'
 on: [push]
 jobs:
   docker:
-    runs-on: alpine3.15
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout
